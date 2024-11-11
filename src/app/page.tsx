@@ -2,12 +2,13 @@ import { Hero } from "@/components/Hero/Hero";
 import { FiSearch, FiMapPin, FiHeart } from "react-icons/fi";
 import { FaLeaf, FaRecycle, FaWater } from "react-icons/fa";
 import Link from "next/link";
+import 'aos/dist/aos.css';
 
 export default function Home() {
     return (
         <>
             <Hero>
-                <div>
+                <div data-aos="slide-left">
                     <h1 className="text-4xl md:text-5xl font-bold text-shadow-md">
                         Conecte-se a um mundo mais sustentável
                     </h1>
@@ -21,7 +22,7 @@ export default function Home() {
                 </div>
             </Hero>
             <main>
-                <section className="bg-gray-100 py-16">
+                <section data-aos="zoom-in-up" className="bg-gray-100 py-16">
                     <div className="max-w-7xl mx-auto px-6 text-center">
                         <h2 className="text-4xl font-bold text-verdeFolha mb-10">
                             Como Funciona?
@@ -66,7 +67,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="bg-verdeClaro py-16">
+                <section data-aos="zoom-in-down" className="bg-verdeClaro py-16">
                     <div className="max-w-7xl mx-auto px-6 text-center">
                         <h2 className="text-4xl font-bold text-brancoNeve mb-10">
                             Benefícios para o Planeta
@@ -116,7 +117,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="bg-gray-100 py-16">
+                <section data-aos="zoom-in-up" className="bg-gray-100 py-16">
                     <div className="max-w-7xl mx-auto px-6 text-center">
                         <h2 className="text-4xl font-bold text-verdeFolha mb-6">
                             Nosso Blog / Dicas Sustentáveis
@@ -136,7 +137,7 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section className="bg-verdeFolha py-16">
+                <section data-aos="zoom-in-down" className="bg-verdeFolha py-16">
                     <div className="max-w-7xl mx-auto px-6 text-center text-brancoNeve">
                         <h2 className="text-4xl font-bold mb-6">
                             Seja um Colaborador
