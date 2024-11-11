@@ -30,6 +30,7 @@ export default function RootLayout({
         <html lang="pt-br">
             <head>
                 <title>Ecommunity - Conectando Pessoas Sustentáveis</title>
+                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
             </head>
             <body className={font.className}>
                 {children}
