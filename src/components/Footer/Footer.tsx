@@ -8,7 +8,7 @@ export const Footer = () => {
                 <div className="flex flex-col md:flex-row justify-between items-center">
                     {/* Logo e descrição */}
                     <div className="mb-8 md:mb-0">
-                        <h2 className="text-2xl font-semibold">EcoCommunity</h2>
+                        <h2 className="text-2xl font-semibold">Ecommunity</h2>
                         <p className="mt-2 text-sm text-cinzaPedregulho">
                             Conectando pessoas a práticas e lugares sustentáveis.
                         </p>
@@ -16,9 +16,9 @@ export const Footer = () => {
 
                     {/* Links */}
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-                        <Link href="/sobre" className="hover:text-verdeClaro">Sobre</Link>
-                        <Link href="/dicas" className="hover:text-verdeClaro">Dicas Sustentáveis</Link>
-                        <Link href="/contato" className="hover:text-verdeClaro">Contato</Link>
+                        <Link href="/sobre" className="hover:text-amareloSolar">Sobre</Link>
+                        <Link href="/dicas" className="hover:text-amareloSolar">Dicas Sustentáveis</Link>
+                        <Link href="/contato" className="hover:text-amareloSolar">Contato</Link>
                     </div>
 
                     {/* Redes sociais */}
