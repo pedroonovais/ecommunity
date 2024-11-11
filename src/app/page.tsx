@@ -4,6 +4,7 @@ import { FaLeaf, FaRecycle, FaWater } from "react-icons/fa";
 import Link from "next/link";
 import 'aos/dist/aos.css';
 import Image from 'next/image';
+import { Footer } from "@/components/Footer/Footer";
 
 export default function Home() {
     return (
@@ -30,7 +31,7 @@ export default function Home() {
                         </h2>
                         <div className="flex flex-col md:flex-row justify-center items-center gap-10">
                             {/* Passo 1 */}
-                            <div className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
+                            <div data-aos="flip-left" className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
                                 <FiSearch className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     1. Encontre
@@ -42,7 +43,7 @@ export default function Home() {
                             </div>
 
                             {/* Passo 2 */}
-                            <div className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
+                            <div data-aos="flip-left" className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
                                 <FiMapPin className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     2. Conecte-se
@@ -54,7 +55,7 @@ export default function Home() {
                             </div>
 
                             {/* Passo 3 */}
-                            <div className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
+                            <div data-aos="flip-left" className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
                                 <FiHeart className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     3. Aja
@@ -80,7 +81,7 @@ export default function Home() {
 
                         <div className="flex flex-col md:flex-row justify-center items-center gap-10">
                             {/* Benefício 1 */}
-                            <div className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
+                            <div data-aos="flip-right" className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
                                 <FaLeaf className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     Redução de Emissões
@@ -92,7 +93,7 @@ export default function Home() {
                             </div>
 
                             {/* Benefício 2 */}
-                            <div className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
+                            <div data-aos="flip-right" className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
                                 <FaRecycle className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     Economia de Recursos
@@ -104,7 +105,7 @@ export default function Home() {
                             </div>
 
                             {/* Benefício 3 */}
-                            <div className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
+                            <div data-aos="flip-right" className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
                                 <FaWater className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     Preservação de Água
@@ -170,6 +171,7 @@ export default function Home() {
                     </div>
                 </section>
             </main>
+            <Footer />
         </>
     );
 }
