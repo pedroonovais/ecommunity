@@ -11,7 +11,7 @@ export const Menu = () => {
 
     return (
         <header className="flex items-center justify-between p-3 bg-opacity-30">
-            <div data-aos="fade-up" className="flex items-center w-52">
+            <div data-aos="fade-up" className="flex items-center w-52 z-50">
                 <img
                     src="/logo-texto-branco.svg"
                     alt="Ícone do Menu"
@@ -41,7 +41,7 @@ export const Menu = () => {
 
             <nav
                 data-aos="fade-up"
-                className="hidden md:flex flex-grow justify-center space-x-4"
+                className="hidden md:flex flex-grow justify-center space-x-4 z-50"
             >
                 <a href="#home" className="text-gray-100 hover:text-amareloSolar">
                     Home
@@ -56,7 +56,7 @@ export const Menu = () => {
 
             <div
                 data-aos="fade-up"
-                className="hidden md:flex items-center w-52 justify-end"
+                className="hidden md:flex items-center w-52 justify-end z-50"
             >
                 <button
                     onClick={() => console.log("Chegando")}
