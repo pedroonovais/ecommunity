@@ -28,6 +28,9 @@ export default function RootLayout({
 
     return (
         <html lang="pt-br">
+            <head>
+                <title>Ecommunity - Conectando Pessoas Sustentáveis</title>
+            </head>
             <body className={font.className}>
                 {children}
             </body>

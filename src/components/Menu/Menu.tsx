@@ -20,9 +20,6 @@ export const Menu = () => {
                 <a href="#about" className="text-gray-100 hover:text-white">
                     Sobre
                 </a>
-                <a href="#services" className="text-gray-100 hover:text-white">
-                    Serviços
-                </a>
                 <a href="#contact" className="text-gray-100 hover:text-white">
                     Contato
                 </a>
