@@ -3,6 +3,7 @@ import { FiSearch, FiMapPin, FiHeart } from "react-icons/fi";
 import { FaLeaf, FaRecycle, FaWater } from "react-icons/fa";
 import Link from "next/link";
 import 'aos/dist/aos.css';
+import Image from 'next/image';
 
 export default function Home() {
     return (
@@ -29,7 +30,7 @@ export default function Home() {
                         </h2>
                         <div className="flex flex-col md:flex-row justify-center items-center gap-10">
                             {/* Passo 1 */}
-                            <div className="bg-white shadow-2xl rounded-lg p-6 max-w-xs">
+                            <div className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
                                 <FiSearch className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     1. Encontre
@@ -41,7 +42,7 @@ export default function Home() {
                             </div>
 
                             {/* Passo 2 */}
-                            <div className="bg-white shadow-2xl rounded-lg p-6 max-w-xs">
+                            <div className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
                                 <FiMapPin className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     2. Conecte-se
@@ -53,7 +54,7 @@ export default function Home() {
                             </div>
 
                             {/* Passo 3 */}
-                            <div className="bg-white shadow-2xl rounded-lg p-6 max-w-xs">
+                            <div className="bg-white shadow-2xl rounded-lg p-16 max-w-xs">
                                 <FiHeart className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     3. Aja
@@ -79,7 +80,7 @@ export default function Home() {
 
                         <div className="flex flex-col md:flex-row justify-center items-center gap-10">
                             {/* Benefício 1 */}
-                            <div className="bg-white shadow-lg rounded-lg p-6 max-w-xs">
+                            <div className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
                                 <FaLeaf className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     Redução de Emissões
@@ -91,7 +92,7 @@ export default function Home() {
                             </div>
 
                             {/* Benefício 2 */}
-                            <div className="bg-white shadow-lg rounded-lg p-6 max-w-xs">
+                            <div className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
                                 <FaRecycle className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     Economia de Recursos
@@ -103,7 +104,7 @@ export default function Home() {
                             </div>
 
                             {/* Benefício 3 */}
-                            <div className="bg-white shadow-lg rounded-lg p-6 max-w-xs">
+                            <div className="bg-white shadow-lg rounded-lg p-16 max-w-xs">
                                 <FaWater className="text-verdeFolha text-4xl mb-4 mx-auto" />
                                 <h3 className="text-xl font-semibold text-verdeFolha mb-2">
                                     Preservação de Água
@@ -117,23 +118,34 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section data-aos="zoom-in-up" className="bg-gray-100 py-16">
-                    <div className="max-w-7xl mx-auto px-6 text-center">
-                        <h2 className="text-4xl font-bold text-verdeFolha mb-6">
-                            Nosso Blog / Dicas Sustentáveis
-                        </h2>
-                        <p className="text-cinzaPedregulho text-lg mb-8">
-                            Inspire-se com dicas e práticas sustentáveis para
-                            incorporar no seu dia a dia. Aprenda maneiras de
-                            contribuir para um futuro mais verde!
-                        </p>
+                <section data-aos="zoom-in-up" className="bg-gray-100 py-16 flex items-center ">
+                    <div className="flex items-center mx-auto max-w-7xl px-6">
+                        <div className="max-w-3xl text-right">
+                            <h2 className="text-4xl font-bold text-verdeFolha mb-6">
+                                Nosso Blog / Dicas Sustentáveis
+                            </h2>
+                            <p className="text-cinzaPedregulho text-lg mb-8">
+                                Inspire-se com dicas e práticas sustentáveis para
+                                incorporar no seu dia a dia. Aprenda maneiras de
+                                contribuir para um futuro mais verde!
+                            </p>
 
-                        <Link
-                            href="/dicas"
-                            className="bg-verdeFolha text-brancoNeve px-6 py-3 rounded-lg font-semibold hover:bg-verdeClaro transition duration-300"
-                        >
-                            Acesse as Dicas Sustentáveis
-                        </Link>
+                            <Link
+                                href="/dicas"
+                                className="bg-verdeFolha text-brancoNeve px-6 py-3 rounded-lg font-semibold hover:bg-verdeClaro transition duration-300"
+                            >
+                                Acesse as Dicas Sustentáveis
+                            </Link>
+                        </div>
+                        <div className="max-w-3xl ml-6">
+                            <Image 
+                                src="/blog.jpg"
+                                alt="Descrição da imagem"
+                                width={500}
+                                height={300}
+                                className="rounded-xl"
+                            />
+                        </div>
                     </div>
                 </section>
 
