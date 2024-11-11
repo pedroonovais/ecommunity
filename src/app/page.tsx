@@ -119,9 +119,10 @@ export default function Home() {
                     </div>
                 </section>
 
-                <section data-aos="zoom-in-up" className="bg-gray-100 py-16 flex items-center ">
-                    <div className="flex items-center mx-auto max-w-7xl px-6">
-                        <div className="max-w-3xl text-right">
+                <section data-aos="zoom-in-up" className="bg-gray-100 py-16 flex items-center">
+                    <div className="flex flex-col md:flex-row items-center mx-auto max-w-7xl px-6">
+                        {/* Seção de texto */}
+                        <div className="max-w-3xl text-center md:text-right md:mb-0 mb-8">
                             <h2 className="text-4xl font-bold text-verdeFolha mb-6">
                                 Nosso Blog / Dicas Sustentáveis
                             </h2>
@@ -130,15 +131,16 @@ export default function Home() {
                                 incorporar no seu dia a dia. Aprenda maneiras de
                                 contribuir para um futuro mais verde!
                             </p>
-
                             <Link
                                 href="/dicas"
                                 className="bg-verdeFolha text-brancoNeve px-6 py-3 rounded-lg font-semibold hover:bg-verdeClaro transition duration-300"
                             >
-                                Acesse as Dicas Sustentáveis
+                                Saiba mais
                             </Link>
                         </div>
-                        <div className="max-w-3xl ml-6">
+
+                        {/* Seção de imagem */}
+                        <div className="max-w-3xl md:ml-6">
                             <Image 
                                 src="/blog.jpg"
                                 alt="Descrição da imagem"
