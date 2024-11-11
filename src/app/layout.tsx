@@ -1,13 +1,17 @@
-import './globals.css'
+import { Menu } from "@/components/Menu/Menu";
+import "./globals.css";
 
 export default function RootLayout({
-  children,
+    children,
 }: {
-  children: React.ReactNode
+    children: React.ReactNode;
 }) {
-  return (
-    <html lang="pt-br">
-      <body>{children}</body>
-    </html>
-  )
+    return (
+        <html lang="pt-br">
+            <body>
+                <Menu />
+                <main>{children}</main>
+            </body>
+        </html>
+    );
 }
