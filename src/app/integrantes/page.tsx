@@ -9,18 +9,14 @@ import { FaGithub, FaLinkedin } from "react-icons/fa";
 export default function Integrantes() {
     return (
         <>
-            <Hero>
+            <Hero bgImg="/hero-participantes.jpg">
                 <div data-aos="slide-left">
-                    <h1 className="text-4xl md:text-5xl font-bold text-shadow-md">
+                    <h1 className="text-4xl md:text-5xl font-bold text-shadow-md mb-3">
                         Integrantes
                     </h1>
                     <p>
-                        Descubra lugares, produtos e práticas que fazem a
-                        diferença. Pequenas escolhas, grandes mudanças.
+                        Descubra quem está por tras da iniciativa Ecommunity.
                     </p>
-                    <button className="bg-verdeFolha text-brancoNeve px-3 py-2 rounded-lg font-sans hover:bg-verdeClaro transition duration-300 mt-2">
-                        Explore agora
-                    </button>
                 </div>
             </Hero>
 

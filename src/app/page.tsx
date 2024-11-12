@@ -10,7 +10,7 @@ import { Parceiros } from "@/components/Parceiros/Parceiros";
 export default function Home() {
     return (
         <>
-            <Hero>
+            <Hero bgImg="/hero-home2.jpg">
                 <div data-aos="slide-left">
                     <h1 className="text-4xl md:text-5xl font-bold text-shadow-md">
                         Conecte-se a um mundo mais sustentável
