@@ -5,6 +5,7 @@ import Link from "next/link";
 import 'aos/dist/aos.css';
 import Image from 'next/image';
 import { Footer } from "@/components/Footer/Footer";
+import { Parceiros } from "@/components/Parceiros/Parceiros";
 
 export default function Home() {
     return (
@@ -152,6 +153,8 @@ export default function Home() {
                     </div>
                 </section>
 
+                <Parceiros />
+
                 <section data-aos="zoom-in-down" className="bg-verdeFolha py-16">
                     <div className="max-w-7xl mx-auto px-6 text-center text-brancoNeve">
                         <h2 className="text-4xl font-bold mb-6">
@@ -172,6 +175,8 @@ export default function Home() {
                         </Link>
                     </div>
                 </section>
+
+                
             </main>
             <Footer />
         </>
