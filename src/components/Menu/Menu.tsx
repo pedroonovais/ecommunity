@@ -1,6 +1,7 @@
 "use client";
 import { useState } from "react";
 import 'aos/dist/aos.css';
+import Link from "next/link";
 
 export const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -43,15 +44,10 @@ export const Menu = () => {
                 data-aos="fade-up"
                 className="hidden md:flex flex-grow justify-center space-x-4 z-50"
             >
-                <a href="#home" className="text-gray-100 hover:text-amareloSolar">
-                    Home
-                </a>
-                <a href="#about" className="text-gray-100 hover:text-amareloSolar">
-                    Sobre
-                </a>
-                <a href="#contact" className="text-gray-100 hover:text-amareloSolar">
-                    Contato
-                </a>
+                <Link href={'/'} className="text-gray-100 hover:text-amareloSolar">Home</Link>
+                <Link href={'/quem-somos'} className="text-gray-100 hover:text-amareloSolar">Quem Somos</Link>
+                <Link href={'/contato'} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
+                <Link href={'/integrantes'} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
             </nav>
 
             <div
@@ -59,7 +55,6 @@ export const Menu = () => {
                 className="hidden md:flex items-center w-52 justify-end z-50"
             >
                 <button
-                    onClick={() => console.log("Chegando")}
                     className="w-24 bg-transparent border border-white text-white px-4 py-2 rounded-full hover:bg-brancoNeve hover:text-black transition duration-300"
                 >
                     Login
@@ -68,30 +63,12 @@ export const Menu = () => {
 
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-75 z-40 flex flex-col items-center justify-center space-y-8">
-                    <a
-                        href="#home"
-                        onClick={handleMenuToggle}
-                        className="text-gray-100 text-2xl hover:text-amareloSolar"
-                    >
-                        Home
-                    </a>
-                    <a
-                        href="#about"
-                        onClick={handleMenuToggle}
-                        className="text-gray-100 text-2xl hover:text-amareloSolar"
-                    >
-                        Sobre
-                    </a>
-                    <a
-                        href="#contact"
-                        onClick={handleMenuToggle}
-                        className="text-gray-100 text-2xl hover:text-amareloSolar"
-                    >
-                        Contato
-                    </a>
+                    <Link href={'/'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Home</Link>
+                    <Link href={'/quem-somos'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Quem Somos</Link>
+                    <Link href={'/contato'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
+                    <Link href={'/integrantes'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
                     <button
                         onClick={() => {
-                            console.log("Chegando");
                             handleMenuToggle();
                         }}
                         className="w-24 bg-transparent border border-white text-white px-4 py-2 rounded-full hover:bg-brancoNeve hover:text-black transition duration-300"
