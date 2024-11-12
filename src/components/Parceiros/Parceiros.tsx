@@ -9,36 +9,41 @@ const parceiros = [
         src: "/sap-logo.png",
         description:
             "Líder global em software empresarial, ajudando organizações a melhorar seus processos de negócio.",
+        link: "https://www.sap.com/brazil/products/sustainability/our-approach.html#:~:text=As%20solu%C3%A7%C3%B5es%20SAP%20Sustainability%20ajudam,pr%C3%A1ticas%20de%20neg%C3%B3cios%20mais%20sustent%C3%A1veis.",
     },
     {
         name: "FIA",
         src: "/fia-logo.png",
         description:
             "Fundação Instituto de Administração, uma referência em pesquisa e educação no Brasil.",
+        link: "https://www.fia.com/fia-innovation-fund/society-impact",
     },
     {
         name: "Mahindra",
         src: "/mahindra-logo.jpg",
         description:
             "Empresa multinacional com foco em agricultura e tecnologia sustentável.",
+        link: "https://www.mahindra.com/rise/sustainability",
     },
-    {
-        name: "FIAP",
-        src: "/fiap-logo.jpg",
-        description:
-            "Faculdade de tecnologia reconhecida pela inovação e formação de profissionais na área.",
-    },
+    // {
+    //     name: "FIAP",
+    //     src: "/fiap-logo.jpg",
+    //     description:
+    //         "Faculdade de tecnologia reconhecida pela inovação e formação de profissionais na área.",
+    // },
     {
         name: "Ultragaz",
         src: "/ultragaz-logo.jpg",
         description:
             "Pioneira em distribuição de gás no Brasil, promovendo sustentabilidade no setor energético.",
+        link: "https://www.ultragaz.com.br/energia-inteligente/",
     },
     {
         name: "Ultracargo",
         src: "/ultracargo-logo.jpg",
         description:
             "Líder em armazenagem de produtos químicos e petroquímicos, comprometida com a sustentabilidade.",
+        link: "https://www.ultracargo.com.br/sustentabilidade/",
     },
 ];
 
@@ -67,6 +72,9 @@ export const Parceiros = () => {
         <section data-aos="fade-down" className="py-16 bg-brancoNeve">
             <div className="max-w-6xl mx-auto px-6 text-center">
                 <h2 className="text-3xl font-bold mb-8 ">Nossos Parceiros</h2>
+                <p className="text-cinzaPedregulho text-lg mb-8">
+                    Descubra as iniciativas sustentáveis dos nosso parceiros que tornam o mundo em um lugar melhor.
+                </p>
                 <div
                     className="relative"
                     onMouseEnter={() => setIsHovered(true)}
@@ -101,6 +109,11 @@ export const Parceiros = () => {
                                             <p className="text-sm text-gray-600">
                                                 {parceiro.description}
                                             </p>
+                                            <a href={parceiro.link} target="_blank">
+                                                <button className="bg-verdeFolha text-brancoNeve px-3 py-2 rounded-lg font-sans hover:bg-verdeClaro transition duration-300 mt-2">
+                                                    Saiba mais
+                                                </button>
+                                            </a>
                                         </div>
                                     </div>
                                 </div>
