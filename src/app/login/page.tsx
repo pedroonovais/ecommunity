@@ -23,45 +23,50 @@ export default function Login() {
     };
 
     return (
-        <div className="h-screen flex items-center justify-center bg-cover bg-center relative" style={{ backgroundImage: "url('/hero-home2.jpg')" }}>
-            <div className="absolute inset-0 bg-black opacity-60" />
+        <div
+            className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+            style={{ backgroundImage: "url('/hero-home2.jpg')" }}
+        >
+            <div className="absolute inset-0 bg-black opacity-50"></div>
             
-            <div className="relative z-10 bg-gray-900 bg-opacity-80 p-8 rounded-lg max-w-md w-full text-white shadow-lg">
-                <div className="flex justify-center mb-6">
-                    <Image src="/logo-texto-branco.svg" alt="eCommunity Logo" width={180} height={100} />
+            <div className="relative z-10 max-w-md w-full p-8 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
+                <div className="flex justify-center mb-8">
+                    <Image
+                        src="/logo-texto-branco.svg"
+                        alt="Logo eCommunity"
+                        width={200}
+                        height={50}
+                    />
                 </div>
-
-                <form onSubmit={handleSubmit(onSubmit)} className="space-y-4">
-                    <div>
-                        <label htmlFor="email" className="block text-sm font-medium">
-                            Email
-                        </label>
+                <form onSubmit={handleSubmit(onSubmit)}>
+                    <div className="mb-4">
                         <input
                             type="email"
-                            id="email"
+                            placeholder="Email"
                             {...register("email")}
-                            className="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-verdeFolha"
+                            className="w-full px-4 py-2 mb-4 text-white bg-transparent border border-white rounded focus:outline-none focus:border-verdeFolha"
                         />
                         {errors.email && <p className="text-red-500 text-xs mt-1">{errors.email.message}</p>}
                     </div>
-
-                    <div>
-                        <label htmlFor="password" className="block text-sm font-medium">
-                            Senha
-                        </label>
+                    <div className="mb-6">
                         <input
                             type="password"
-                            id="password"
+                            placeholder="Senha"
                             {...register("password")}
-                            className="w-full p-3 rounded-md bg-gray-800 text-white border border-gray-700 focus:outline-none focus:border-verdeFolha"
+                            className="w-full px-4 py-2 mb-4 text-white bg-transparent border border-white rounded focus:outline-none focus:border-verdeFolha"
                         />
                         {errors.password && <p className="text-red-500 text-xs mt-1">{errors.password.message}</p>}
                     </div>
-
-                    <button type="submit" className="w-full p-3 bg-verdeFolha hover:bg-verdeClaro transition-colors rounded-md font-semibold">
+                    <button
+                        type="submit"
+                        className="w-full px-4 py-2 font-semibold text-verdeFolha bg-white rounded hover:bg-cinzaPedregulho transition duration-300"
+                    >
                         Entrar
                     </button>
                 </form>
+                <p className="mt-4 text-center text-white">
+                    Não tem uma conta? <a href="/cadastro" className="font-semibold text-verdeFolha">Cadastre-se</a>
+                </p>
             </div>
         </div>
     );
