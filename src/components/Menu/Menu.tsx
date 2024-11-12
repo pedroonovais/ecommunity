@@ -51,17 +51,20 @@ export const Menu = () => {
                 <Link href={'/contato'} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
                 <Link href={'/integrantes'} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
             </nav>
-
+            
             <div
                 data-aos="fade-up"
                 className="hidden md:flex items-center w-52 justify-end z-50"
             >
-                <button
-                    className="w-24 bg-transparent border border-white text-white px-4 py-2 rounded-full hover:bg-brancoNeve hover:text-black transition duration-300"
-                >
-                    Login
-                </button>
+                <Link href={"/login"}>
+                    <button
+                        className="w-24 bg-transparent border border-white text-white px-4 py-2 rounded-full hover:bg-brancoNeve hover:text-black transition duration-300"
+                    >
+                        Login
+                    </button>
+                </Link>
             </div>
+        
 
             {isMenuOpen && (
                 <div className="fixed inset-0 bg-black bg-opacity-75 z-40 flex flex-col items-center justify-center space-y-8">

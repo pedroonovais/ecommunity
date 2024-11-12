@@ -3,6 +3,7 @@ import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
 import Image from "next/image";
+import Link from "next/link";
 
 const schema = yup.object().shape({
     email: yup.string().required("Campo obrigatório").email("Digite um email válido"),
@@ -30,14 +31,16 @@ export default function Login() {
             <div className="absolute inset-0 bg-black opacity-50"></div>
             
             <div className="relative z-10 max-w-md w-full p-8 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
-                <div className="flex justify-center mb-8">
-                    <Image
-                        src="/logo-texto-branco.svg"
-                        alt="Logo eCommunity"
-                        width={200}
-                        height={50}
-                    />
-                </div>
+                <Link href={"/"}>
+                    <div className="flex justify-center mb-8">
+                        <Image
+                            src="/logo-texto-branco.svg"
+                            alt="Logo eCommunity"
+                            width={200}
+                            height={50}
+                        />
+                    </div>
+                </Link>
                 <form onSubmit={handleSubmit(onSubmit)}>
                     <div className="mb-4">
                         <input
