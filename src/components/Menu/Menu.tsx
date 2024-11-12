@@ -13,11 +13,13 @@ export const Menu = () => {
     return (
         <header className="flex items-center justify-between p-3 bg-opacity-30">
             <div data-aos="fade-up" className="flex items-center w-52 z-50">
-                <img
-                    src="/logo-texto-branco.svg"
-                    alt="Ícone do Menu"
-                    className="w-full"
-                />
+                <Link href={"/"}>
+                    <img
+                        src="/logo-texto-branco.svg"
+                        alt="Ícone do Menu"
+                        className="w-full"
+                    />
+                </Link>
             </div>
 
             <button
