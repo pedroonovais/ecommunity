@@ -73,7 +73,7 @@ export const Parceiros = () => {
             <div className="max-w-6xl mx-auto px-6 text-center">
                 <h2 className="text-3xl font-bold mb-8 ">Nossos Parceiros</h2>
                 <p className="text-cinzaPedregulho text-lg mb-8">
-                    Descubra as iniciativas sustentáveis dos nossos parceiros que tornam o mundo em um lugar melhor.
+                    Conheça iniciativas sustentáveis de nossos parceiros que tornam o mundo em um lugar mais sustentável.
                 </p>
                 <div
                     className="relative"
