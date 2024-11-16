@@ -19,7 +19,7 @@ interface Local {
 export default function PesquisaLocais() {
     const [localizacao, setLocalizacao] = useState("");
     const [locais, setLocais] = useState<Local[]>([]);
-    const [locaisFiltrados, setLocaisFiltrados] = useState<Local[]>([]); // Para armazenar os locais filtrados
+    const [locaisFiltrados, setLocaisFiltrados] = useState<Local[]>([]);
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -35,7 +35,7 @@ export default function PesquisaLocais() {
             }
             const data: Local[] = await res.json();
             setLocais(data);
-            setLocaisFiltrados(data); // Inicialmente, exibe todos os locais
+            setLocaisFiltrados(data); 
         } catch (err) {
             setError("Ocorreu um erro ao buscar os locais.");
         } finally {
@@ -46,7 +46,7 @@ export default function PesquisaLocais() {
     const handlePesquisar = () => {
         if (!localizacao) {
             setError("Por favor, digite uma localização.");
-            setLocaisFiltrados(locais); // Caso não haja pesquisa, mostra todos os locais
+            setLocaisFiltrados(locais); 
             return;
         }
         const locaisFiltrados = locais.filter(local =>
@@ -69,7 +69,7 @@ export default function PesquisaLocais() {
         >
             <div className="absolute inset-0 bg-black opacity-50"></div>
 
-            <div className="relative z-10 max-w-5xl w-full p-8 my-12 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
+            <div className="relative z-10 max-w-5xl w-full p-8 my-10 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
                 <div className="flex justify-center mb-8">
                     <Link href="/">
                         <Image
