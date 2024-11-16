@@ -2,6 +2,7 @@
 import { useState } from "react";
 import 'aos/dist/aos.css';
 import Link from "next/link";
+import Image from "next/image";
 
 export const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,10 +15,11 @@ export const Menu = () => {
         <header className="flex items-center justify-between p-3 bg-opacity-30">
             <div data-aos="fade-up" className="flex items-center w-52 z-50">
                 <Link href={"/"}>
-                    <img
+                    <Image
                         src="/logo-texto-branco.svg"
                         alt="Ícone do Menu"
-                        className="w-full"
+                        width={208}
+                        height={52}
                     />
                 </Link>
             </div>
@@ -48,8 +50,10 @@ export const Menu = () => {
             >
                 <Link href={'/'} className="text-gray-100 hover:text-amareloSolar">Home</Link>
                 <Link href={'/quem-somos'} className="text-gray-100 hover:text-amareloSolar">Quem Somos</Link>
-                <Link href={'/contato'} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
+                <Link href={'/gamificacao'} className="text-gray-100 hover:text-amareloSolar">Gamificação</Link>
+                <Link href={'/pesquisa-local'} className="text-gray-100 hover:text-amareloSolar">Locais Sustentáveis</Link>
                 <Link href={'/integrantes'} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
+                <Link href={'/contato'} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
             </nav>
             
             <div
@@ -70,8 +74,10 @@ export const Menu = () => {
                 <div className="fixed inset-0 bg-black bg-opacity-75 z-40 flex flex-col items-center justify-center space-y-8">
                     <Link href={'/'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Home</Link>
                     <Link href={'/quem-somos'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Quem Somos</Link>
-                    <Link href={'/contato'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
+                    <Link href={'/gamificacao'} className="text-gray-100 hover:text-amareloSolar">Gamificação</Link>
+                    <Link href={'/pesquisa-local'} className="text-gray-100 hover:text-amareloSolar">Locais Sustentáveis</Link>
                     <Link href={'/integrantes'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
+                    <Link href={'/contato'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
                     <button
                         onClick={() => {
                             handleMenuToggle();

@@ -6,10 +6,12 @@ import 'aos/dist/aos.css';
 import Image from 'next/image';
 import { Footer } from "@/components/Footer/Footer";
 import { Parceiros } from "@/components/Parceiros/Parceiros";
+import AvisoCookies from "@/components/AvisoCookies/AvisoCookies";
 
 export default function Home() {
     return (
         <>
+            <AvisoCookies />
             <Hero bgImg="/hero-home2.jpg">
                 <div data-aos="slide-left">
                     <h1 className="text-4xl md:text-5xl font-bold text-shadow-md">
