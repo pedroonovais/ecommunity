@@ -19,6 +19,7 @@ interface Local {
 export default function PesquisaLocais() {
     const [localizacao, setLocalizacao] = useState("");
     const [locais, setLocais] = useState<Local[]>([]);
+    const [locaisFiltrados, setLocaisFiltrados] = useState<Local[]>([]); // Para armazenar os locais filtrados
     const [loading, setLoading] = useState(false);
     const [error, setError] = useState("");
 
@@ -28,14 +29,13 @@ export default function PesquisaLocais() {
         setLoading(true);
         setError("");
         try {
-            console.log(`Url = ${process.env.NEXT_PUBLIC_API_BACKEND_URL}/local`);
             const res = await fetch(`${apiUrl}/local`);
             if (!res.ok) {
                 throw new Error("Falha ao carregar os locais");
             }
             const data: Local[] = await res.json();
             setLocais(data);
-            console.log(data);
+            setLocaisFiltrados(data); // Inicialmente, exibe todos os locais
         } catch (err) {
             setError("Ocorreu um erro ao buscar os locais.");
         } finally {
@@ -43,24 +43,18 @@ export default function PesquisaLocais() {
         }
     };
 
-    const handlePesquisar = async () => {
+    const handlePesquisar = () => {
         if (!localizacao) {
             setError("Por favor, digite uma localização.");
+            setLocaisFiltrados(locais); // Caso não haja pesquisa, mostra todos os locais
             return;
         }
-        setLoading(true);
-        setError("");
-        try {
-            const res = await fetch(`/api/locais?localizacao=${localizacao}`);
-            if (!res.ok) {
-                throw new Error("Falha na busca");
-            }
-            const data: Local[] = await res.json();
-            setLocais(data);
-        } catch (err) {
-            setError("Ocorreu um erro ao buscar os locais.");
-        } finally {
-            setLoading(false);
+        const locaisFiltrados = locais.filter(local =>
+            local.cidade.toLowerCase().includes(localizacao.toLowerCase())
+        );
+        setLocaisFiltrados(locaisFiltrados);
+        if (locaisFiltrados.length === 0) {
+            setError("Nenhum local encontrado para essa cidade.");
         }
     };
 
@@ -75,7 +69,7 @@ export default function PesquisaLocais() {
         >
             <div className="absolute inset-0 bg-black opacity-50"></div>
 
-            <div className="relative z-10 max-w-5xl w-full p-8 my-8 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
+            <div className="relative z-10 max-w-5xl w-full p-8 my-12 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
                 <div className="flex justify-center mb-8">
                     <Link href="/">
                         <Image
@@ -112,7 +106,6 @@ export default function PesquisaLocais() {
                             </>
                         )}
                     </button>
-
                 </div>
                 {error && <p className="text-red-500 text-center mt-4">{error}</p>}
 
@@ -122,9 +115,9 @@ export default function PesquisaLocais() {
                     </Link>
                 </div>
 
-                {locais.length > 0 && (
-                    <div className="mt-10 w-full">
-                        {locais.map((local) => (
+                {locaisFiltrados.length > 0 && (
+                    <div className="mt-12 w-full">
+                        {locaisFiltrados.map((local) => (
                             <div
                                 key={local.id}
                                 className="bg-white p-6 rounded-lg shadow-lg hover:shadow-2xl transition duration-300 mb-6"
