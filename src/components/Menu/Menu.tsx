@@ -2,6 +2,7 @@
 import { useState } from "react";
 import 'aos/dist/aos.css';
 import Link from "next/link";
+import Image from "next/image";
 
 export const Menu = () => {
     const [isMenuOpen, setIsMenuOpen] = useState(false);
@@ -14,10 +15,11 @@ export const Menu = () => {
         <header className="flex items-center justify-between p-3 bg-opacity-30">
             <div data-aos="fade-up" className="flex items-center w-52 z-50">
                 <Link href={"/"}>
-                    <img
+                    <Image
                         src="/logo-texto-branco.svg"
                         alt="Ícone do Menu"
-                        className="w-full"
+                        width={208}
+                        height={52}
                     />
                 </Link>
             </div>
