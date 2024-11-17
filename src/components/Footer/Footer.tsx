@@ -16,8 +16,8 @@ export const Footer = () => {
 
                     {/* Links */}
                     <div className="flex flex-col md:flex-row space-y-4 md:space-y-0 md:space-x-8">
-                        <Link href="/sobre" className="hover:text-amareloSolar">Sobre</Link>
-                        <Link href="/dicas" className="hover:text-amareloSolar">Dicas Sustentáveis</Link>
+                        <Link href="/quem-somos" className="hover:text-amareloSolar">Sobre</Link>
+                        <Link href="/noticias" className="hover:text-amareloSolar">Dicas Sustentáveis</Link>
                         <Link href="/contato" className="hover:text-amareloSolar">Contato</Link>
                     </div>
 
