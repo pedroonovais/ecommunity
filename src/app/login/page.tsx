@@ -1,11 +1,11 @@
 "use client";
+import { useState } from "react";
+import { useRouter } from "next/navigation";
+import Image from "next/image";
+import Link from "next/link";
 import { useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
-import Image from "next/image";
-import Link from "next/link";
-import { useState } from "react";
-import { useRouter } from "next/router";
 
 const schema = yup.object().shape({
     login: yup.string().required("Campo obrigatório"),
@@ -16,11 +16,9 @@ const schema = yup.object().shape({
 });
 
 export default function Login() {
-    const apiUrl = process.env.NEXT_PUBLIC_API_BACKEND_URL;
-
-    const [errorMessage, setErrorMessage] = useState("");
     const router = useRouter();
-
+    const [errorMessage, setErrorMessage] = useState("");
+    
     const {
         register,
         handleSubmit,
@@ -28,6 +26,8 @@ export default function Login() {
     } = useForm({
         resolver: yupResolver(schema),
     });
+
+    const apiUrl = process.env.NEXT_PUBLIC_API_BACKEND_URL;
 
     const onSubmit = async (data: any) => {
         try {
@@ -53,6 +53,8 @@ export default function Login() {
 
             localStorage.setItem("token", token);
             setErrorMessage("");
+
+            router.push("/home");
         } catch (error) {
             console.error("Erro de login:", error);
             setErrorMessage("Erro ao conectar ao servidor. Tente novamente mais tarde.");
