@@ -3,6 +3,8 @@ import { useEffect, useState } from "react";
 import Image from "next/image";
 import Link from "next/link";
 import { FaSearch } from "react-icons/fa";
+import { Footer } from "@/components/Footer/Footer";
+import { Menu } from "@/components/Menu/Menu";
 
 interface Local {
     id: string;
@@ -63,10 +65,13 @@ export default function PesquisaLocais() {
     }, []);
 
     return (
+        <>
+        
         <div
             className="relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: "url('/hero-home2.jpg')" }}
         >
+            <Menu />
             <div className="absolute inset-0 bg-black opacity-50"></div>
 
             <div className="relative z-10 max-w-5xl w-full p-8 my-10 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
@@ -77,8 +82,7 @@ export default function PesquisaLocais() {
                             alt="Logo eCommunity"
                             width={200}
                             height={50}
-                            className="cursor-pointer"
-                        />
+                            className="cursor-pointer" />
                     </Link>
                 </div>
 
@@ -92,8 +96,7 @@ export default function PesquisaLocais() {
                         value={localizacao}
                         onChange={(e) => setLocalizacao(e.target.value)}
                         className="w-full max-w-md px-4 py-2 text-black rounded-lg focus:outline-none"
-                        placeholder="Digite sua cidade ou endereço"
-                    />
+                        placeholder="Digite sua cidade ou endereço" />
                     <button
                         onClick={handlePesquisar}
                         className="bg-verdeFolha text-white px-6 py-2 rounded-lg font-semibold hover:bg-verdeClaro transition duration-300 flex items-center"
@@ -140,5 +143,7 @@ export default function PesquisaLocais() {
                 )}
             </div>
         </div>
+        <Footer />
+        </>
     );
 }
