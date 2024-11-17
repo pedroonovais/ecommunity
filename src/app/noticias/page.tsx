@@ -88,9 +88,11 @@ export default function Noticias() {
                                 <span className="text-sm text-white uppercase">
                                     {noticiasFiltradas[0].categoria}
                                 </span>
-                                <h2 className="text-2xl font-bold text-white">
-                                    {noticiasFiltradas[0].titulo}
-                                </h2>
+                                <Link href={`/noticias/${noticiasFiltradas[0].id}`}>
+                                    <h2 className="text-2xl font-bold text-white">
+                                        {noticiasFiltradas[0].titulo}
+                                    </h2>
+                                </Link>
                                 <p className="text-white mt-2">
                                     {noticiasFiltradas[0].resumo}
                                 </p>
