@@ -22,10 +22,6 @@ export default function Noticias() {
 
     const carregarNoticias = async () => {
         try {
-            console.log(`${apiUrl}/materia`);
-            return;
-            
-
             const res = await fetch(`${apiUrl}/materia`);
             if (!res.ok) {
                 throw new Error("Erro ao carregar notícias");
