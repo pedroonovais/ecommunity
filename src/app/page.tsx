@@ -127,7 +127,7 @@ export default function Home() {
                         {/* Seção de texto */}
                         <div className="max-w-3xl text-center md:text-right md:mb-0 mb-8">
                             <h2 className="text-4xl font-bold text-verdeFolha mb-6">
-                                Nosso Blog / Dicas Sustentáveis
+                                Nossas Notícias / Dicas Sustentáveis
                             </h2>
                             <p className="text-cinzaPedregulho text-lg mb-8">
                                 Inspire-se com dicas e práticas sustentáveis para
@@ -135,7 +135,7 @@ export default function Home() {
                                 contribuir para um futuro mais verde!
                             </p>
                             <Link
-                                href="/dicas"
+                                href="/noticias"
                                 className="bg-verdeFolha text-brancoNeve px-6 py-3 rounded-lg font-semibold hover:bg-verdeClaro transition duration-300"
                             >
                                 Saiba mais
