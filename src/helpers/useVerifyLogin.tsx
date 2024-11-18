@@ -1,26 +1,32 @@
 "use client";
+import { useContext, useEffect } from "react";
 import { UserContext } from "@/contexts/UserContext";
 import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/navigation";
-import { useContext } from "react";
 
 export const useVerifyLogin = () => {
-    const router = useRouter();
-    const { user, setUser } = useContext(UserContext);
-    
-    if (user?.id === 0 || user?.email === "" || user?.nome === "") {
-        
-        const token = localStorage.getItem("token");
+  const router = useRouter();
+  const { user, setUser } = useContext(UserContext);
 
-        if (token) {
-            const decodedToken: any = jwtDecode(token);
-            setUser({
-                id: decodedToken.sub,
-                nome: decodedToken.nome,
-                email: decodedToken.email,
-            });
-        } else {
-            router.push("/login");
+  useEffect(() => {
+    if (!user || user.id === 0 || user.email === "" || user.nome === "") {
+      const token = typeof window !== "undefined" ? localStorage.getItem("token") : null;
+
+      if (token) {
+        try {
+          const decodedToken: any = jwtDecode(token);
+          setUser({
+            id: decodedToken.sub,
+            nome: decodedToken.nome,
+            email: decodedToken.email,
+          });
+        } catch (error) {
+          console.error("Erro ao decodificar o token:", error);
+          router.push("/login");
         }
+      } else {
+        router.push("/login");
+      }
     }
+  }, [user, setUser, router]);
 };
