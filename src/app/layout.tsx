@@ -1,5 +1,6 @@
 "use client"
 import AOS from 'aos';
+import { UserProvider as UserContextProvider } from '@/contexts/UserContext';
 import "./globals.css";
 import { Open_Sans } from 'next/font/google';
 import { useEffect } from "react";
@@ -15,26 +16,26 @@ export default function RootLayout({
     children: React.ReactNode;
 }) {
 
-    // Inicialização e configuração do Aos (Biblioteca de animação)
     useEffect(() => {
         AOS.init({
-            duration: 700, // duração da animação em ms
-            offset: 100, // distância do scroll para iniciar a animação
-            easing: 'ease-in-out', // estilo de animação
-            once: false, // se true, a animação ocorre apenas uma vez
+            duration: 700,
+            offset: 100,
+            easing: 'ease-in-out',
+            once: false,
         });
     }, []);
 
     return (
-        <html lang="pt-br">
-            <head>
-                <title>Ecommunity - Conectando Pessoas Sustentáveis</title>
-                <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
-                <meta httpEquiv="Content-Security-Policy" content="upgrade-insecure-requests" />
-            </head>
-            <body className={font.className}>
-                {children}
-            </body>
-        </html>
+        <UserContextProvider>
+            <html lang="pt-br">
+                <head>
+                    <title>Ecommunity - Conectando Pessoas Sustentáveis</title>
+                    <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+                </head>
+                <body className={font.className}>
+                    {children}
+                </body>
+            </html>
+        </UserContextProvider>
     );
 }

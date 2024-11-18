@@ -1,11 +1,13 @@
 "use client";
-import { useState } from "react";
-import { useRouter } from "next/navigation";
-import Image from "next/image";
-import Link from "next/link";
-import { useForm } from "react-hook-form";
+import { set, useForm } from "react-hook-form";
 import { yupResolver } from "@hookform/resolvers/yup";
 import * as yup from "yup";
+import Image from "next/image";
+import Link from "next/link";
+import { useContext, useState } from "react";
+import { useRouter } from "next/navigation";
+import { UserContext } from "@/contexts/UserContext";
+import { jwtDecode } from "jwt-decode";
 
 const schema = yup.object().shape({
     login: yup.string().required("Campo obrigatório"),
@@ -16,9 +18,11 @@ const schema = yup.object().shape({
 });
 
 export default function Login() {
+    const apiUrl = process.env.NEXT_PUBLIC_API_BACKEND_URL;
     const router = useRouter();
     const [errorMessage, setErrorMessage] = useState("");
-    
+    const { setUser } = useContext(UserContext);
+
     const {
         register,
         handleSubmit,
@@ -27,9 +31,7 @@ export default function Login() {
         resolver: yupResolver(schema),
     });
 
-    const apiUrl = process.env.NEXT_PUBLIC_API_BACKEND_URL;
-
-    const onSubmit = async (data: any) => {
+    const handleEnviar = async (data: any) => {
         try {
             const response = await fetch(`${apiUrl}/usuario/login`, {
                 method: "POST",
@@ -49,17 +51,26 @@ export default function Login() {
             }
 
             const { token } = await response.json();
-            console.log("Token JWT:", token);
 
             localStorage.setItem("token", token);
             setErrorMessage("");
 
-            router.push("/home");
+            const decodedToken: any = jwtDecode(token);
+
+            setUser({
+                id: decodedToken.sub,
+                nome: decodedToken.nome,
+                email: decodedToken.email,
+            })
+
+            router.push("/dashboard");
         } catch (error) {
             console.error("Erro de login:", error);
             setErrorMessage("Erro ao conectar ao servidor. Tente novamente mais tarde.");
         }
     };
+
+
 
     return (
         <div
@@ -84,7 +95,7 @@ export default function Login() {
                         {errorMessage}
                     </div>
                 )}
-                <form onSubmit={handleSubmit(onSubmit)}>
+                <form onSubmit={handleSubmit(handleEnviar)}>
                     <div className="mb-4">
                         <input
                             type="text"

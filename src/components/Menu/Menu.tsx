@@ -53,6 +53,7 @@ export const Menu = () => {
                 <Link href={'/gamificacao'} className="text-gray-100 hover:text-amareloSolar">Gamificação</Link>
                 <Link href={'/noticias'} className="text-gray-100 hover:text-amareloSolar">Notícias</Link>
                 <Link href={'/pesquisa-local'} className="text-gray-100 hover:text-amareloSolar">Locais Sustentáveis</Link>
+                <Link href={'/parceiros'} className="text-gray-100 hover:text-amareloSolar">Parceiros</Link>
                 <Link href={'/integrantes'} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
                 <Link href={'/contato'} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
             </nav>
@@ -64,6 +65,7 @@ export const Menu = () => {
                     <Link href={'/gamificacao'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Gamificação</Link>
                     <Link href={'/noticias'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Notícias</Link>
                     <Link href={'/pesquisa-local'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Locais Sustentáveis</Link>
+                    <Link href={'/parceiros'} className="text-gray-100 hover:text-amareloSolar">Parceiros</Link>
                     <Link href={'/integrantes'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Integrantes</Link>
                     <Link href={'/contato'} onClick={handleMenuToggle} className="text-gray-100 hover:text-amareloSolar">Contato</Link>
                 </div>

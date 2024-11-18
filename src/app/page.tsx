@@ -21,9 +21,11 @@ export default function Home() {
                         Descubra lugares, produtos e práticas que fazem a
                         diferença. Pequenas escolhas, grandes mudanças.
                     </p>
-                    <button className="bg-verdeFolha text-brancoNeve px-3 py-2 rounded-lg font-sans hover:bg-verdeClaro transition duration-300 mt-2">
-                        Explore agora
-                    </button>
+                    <Link href={"/pesquisa-local"}>
+                        <button className="bg-verdeFolha text-brancoNeve px-3 py-2 rounded-lg font-sans hover:bg-verdeClaro transition duration-300 mt-2">
+                            Explore agora
+                        </button>
+                    </Link>
                 </div>
             </Hero>
             <main>
