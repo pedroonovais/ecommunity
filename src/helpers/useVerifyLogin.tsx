@@ -1,3 +1,4 @@
+"use client";
 import { UserContext } from "@/contexts/UserContext";
 import { jwtDecode } from "jwt-decode";
 import { useRouter } from "next/navigation";
