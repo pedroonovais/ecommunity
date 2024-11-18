@@ -98,7 +98,7 @@ export default function Dashboard() {
 
     useEffect(() => {
         carregarDados();
-    }, []);
+    }, [user?.id]);
 
     const handleCadastrarLocal = async () => {
         try {
@@ -168,39 +168,6 @@ export default function Dashboard() {
             console.error(error);
         }
     };
-
-    const handleEditarMateria = async (idMateria: number) => {
-        const materia = materias.find((m) => m.id === idMateria);
-        if (materia) {
-            const updatedMateria = {
-                idMateria: materia.id,
-                idUsuario: user?.id,
-                tituloMateria: materia.titulo,
-                textoMateria: materia.resumo,
-                ativo: "S", 
-                dtCriacao: materia.dataCriacao,
-                dtUpdate: new Date().toISOString(),
-            };
-    
-            try {
-                const res = await fetch(`${apiUrl}/materia/atualizar`, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(updatedMateria),
-                });
-    
-                if (!res.ok) {
-                    throw new Error("Erro ao editar matéria");
-                }
-    
-                carregarDados();
-            } catch (error) {
-                console.error(error);
-            }
-        }
-    };
     
     const handleExcluirMateria = async (idMateria: number) => {
         try {
@@ -215,41 +182,6 @@ export default function Dashboard() {
             carregarDados();
         } catch (error) {
             console.error(error);
-        }
-    };
-    
-    const handleEditarLocal = async (idLocal: number) => {
-        const local = locais.find((l) => l.id === idLocal);
-        if (local) {
-            const updatedLocal = {
-                id: local.id.toString(),
-                nome: local.nome,
-                categoria: local.categoria,
-                logradouro: local.nome,
-                cep: "0000000",
-                cidade: local.cidade,
-                estado: local.estado,
-                latitude: "0",
-                longitude: "0", 
-            };
-    
-            try {
-                const res = await fetch(`${apiUrl}/local/atualizar`, {
-                    method: "PUT",
-                    headers: {
-                        "Content-Type": "application/json",
-                    },
-                    body: JSON.stringify(updatedLocal),
-                });
-    
-                if (!res.ok) {
-                    throw new Error("Erro ao editar local");
-                }
-    
-                carregarDados();
-            } catch (error) {
-                console.error(error);
-            }
         }
     };
     
@@ -269,9 +201,9 @@ export default function Dashboard() {
         }
     };
 
-    
-    
-    
+    const handleFormularioVisivel = () => {
+        setMostrarFormulario(!mostrarFormulario);
+    }
 
     return (
         <div
@@ -311,10 +243,10 @@ export default function Dashboard() {
 
                     <div className="flex justify-center mb-8">
                         <button
-                            onClick={() => setMostrarFormulario(true)}
+                            onClick={handleFormularioVisivel}
                             className="bg-verdeFolha text-white px-4 py-2 rounded-lg"
                         >
-                            Cadastrar Agora
+                            Adicionar Registro
                         </button>
                     </div>
 
@@ -465,12 +397,6 @@ export default function Dashboard() {
 
                                     <div className="mt-4 flex space-x-2">
                                         <button
-                                            onClick={() => handleEditarMateria(materia.id)}
-                                            className="bg-yellow-500 text-white px-4 py-2 rounded-lg"
-                                        >
-                                            Editar
-                                        </button>
-                                        <button
                                             onClick={() => handleExcluirMateria(materia.id)}
                                             className="bg-red-500 text-white px-4 py-2 rounded-lg"
                                         >
@@ -494,12 +420,6 @@ export default function Dashboard() {
                                     </p>
 
                                     <div className="mt-4 flex space-x-2">
-                                        <button
-                                            onClick={() => handleEditarLocal(local.id)}
-                                            className="bg-yellow-500 text-white px-4 py-2 rounded-lg"
-                                        >
-                                            Editar
-                                        </button>
                                         <button
                                             onClick={() => handleExcluirLocal(local.id)}
                                             className="bg-red-500 text-white px-4 py-2 rounded-lg"
