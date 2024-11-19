@@ -31,6 +31,7 @@ export default function RootLayout({
                 <head>
                     <title>Ecommunity - Conectando Pessoas Sustentáveis</title>
                     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
+                    <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests" />
                 </head>
                 <body className={font.className}>
                     {children}

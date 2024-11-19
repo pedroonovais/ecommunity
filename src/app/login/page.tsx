@@ -8,6 +8,7 @@ import { useContext, useState } from "react";
 import { useRouter } from "next/navigation";
 import { UserContext } from "@/contexts/UserContext";
 import { jwtDecode } from "jwt-decode";
+import { Menu } from "@/components/Menu/Menu";
 
 const schema = yup.object().shape({
     login: yup.string().required("Campo obrigatório"),
@@ -74,20 +75,17 @@ export default function Login() {
 
     return (
         <div
-            className="relative min-h-screen flex items-center justify-center bg-cover bg-center"
+            className="relative min-h-screen flex flex-col items-center justify-center bg-cover bg-center"
             style={{ backgroundImage: "url('/hero-home2.jpg')" }}
         >
+    
             <div className="absolute inset-0 bg-black opacity-50"></div>
-
+    
             <div className="relative z-10 max-w-md w-full p-8 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
                 <Link href={"/"}>
-                    <div className="flex justify-center mb-8">
-                        <Image
-                            src="/logo-texto-branco.svg"
-                            alt="Logo eCommunity"
-                            width={200}
-                            height={50}
-                        />
+                    <div className="flex flex-col text-center justify-center mb-8">
+                        <h1 className="text-2xl text-brancoNeve font-bold">Login Administrativo</h1>
+                        <Link className="text-verdeFolha" href={"/"}>Clique aqui para retornar a Home</Link>
                     </div>
                 </Link>
                 {errorMessage && (
@@ -129,13 +127,8 @@ export default function Login() {
                         Entrar
                     </button>
                 </form>
-                <p className="mt-4 text-center text-white">
-                    Não tem uma conta?{" "}
-                    <a href="/cadastro" className="font-semibold text-verdeFolha">
-                        Cadastre-se
-                    </a>
-                </p>
             </div>
         </div>
     );
+    
 }
