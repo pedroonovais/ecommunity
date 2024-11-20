@@ -51,7 +51,7 @@ export default function Integrantes() {
                         data-aos="fade-up-right"
                     >
                         <h2 className="text-4xl font-bold text-verdeFolha mb-3">
-                            Pedro Novais - 1TDSPX
+                            Pedro Novais - RM555276 - 1TDSPX
                         </h2>
                         <p className="text-cinzaPedregulho text-lg mb-8">
                             Programador com 3 anos de experiência em tecnologias
