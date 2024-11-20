@@ -76,11 +76,11 @@ export default function Detalhes() {
                         {noticia.titulo}
                     </h1>
                     <div className="mb-8 relative">
-                        <img
+                        {/* <img
                             src={`/blog/${noticia.imagem}`}
                             alt={noticia.titulo}
                             className="w-full h-64 object-cover rounded-lg"
-                        />
+                        /> */}
                         <div className="text-gray-100 mt-6">
                             {noticia.texto}
                         </div>

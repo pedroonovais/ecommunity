@@ -79,12 +79,7 @@ export default function Noticias() {
 
                     {noticiasFiltradas.length > 0 && (
                         <div className="mb-8 relative">
-                            <img
-                                src={`/blog/${noticiasFiltradas[0].imagem}`}
-                                alt={noticiasFiltradas[0].titulo}
-                                className="w-full h-64 object-cover rounded-lg"
-                            />
-                            <div className="absolute inset-0 bg-black bg-opacity-50 rounded-lg flex flex-col justify-end p-6">
+                            <div className="relative bg-white bg-opacity-50 rounded-lg flex flex-col justify-end p-6">
                                 <span className="text-sm text-white uppercase">
                                     {noticiasFiltradas[0].categoria}
                                 </span>
@@ -100,17 +95,13 @@ export default function Noticias() {
                         </div>
                     )}
 
+
                     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
                         {noticiasFiltradas.slice(1).map((noticia) => (
                             <div
                                 key={noticia.id}
                                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
                             >
-                                <img
-                                    src={`/blog/${noticia.imagem}`}
-                                    alt={noticia.titulo}
-                                    className="w-full h-40 object-cover"
-                                />
                                 <div className="p-4">
                                     <span className="text-sm text-gray-500 uppercase">
                                         {noticia.categoria}
