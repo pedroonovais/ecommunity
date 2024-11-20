@@ -82,12 +82,13 @@ export default function Login() {
             <div className="absolute inset-0 bg-black opacity-50"></div>
     
             <div className="relative z-10 max-w-md w-full p-8 bg-white bg-opacity-20 backdrop-blur-md rounded-lg">
-                <Link href={"/"}>
-                    <div className="flex flex-col text-center justify-center mb-8">
-                        <h1 className="text-2xl text-brancoNeve font-bold">Login Administrativo</h1>
-                        <Link className="text-verdeFolha" href={"/"}>Clique aqui para retornar a Home</Link>
-                    </div>
-                </Link>
+                <div className="flex flex-col text-center justify-center mb-8">
+                    <h1 className="text-2xl text-brancoNeve font-bold">Login Administrativo</h1>
+                    <Link href={"/"}>
+                        <span className="text-verdeFolha">Clique aqui para retornar a Home</span>
+                    </Link>
+                </div>
+
                 {errorMessage && (
                     <div className="mb-4 text-red-500 text-center font-semibold">
                         {errorMessage}

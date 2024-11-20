@@ -80,9 +80,6 @@ export default function Noticias() {
                     {noticiasFiltradas.length > 0 && (
                         <div className="mb-8 relative">
                             <div className="relative bg-white bg-opacity-50 rounded-lg flex flex-col justify-end p-6">
-                                <span className="text-sm text-white uppercase">
-                                    {noticiasFiltradas[0].categoria}
-                                </span>
                                 <Link href={`/noticias/${noticiasFiltradas[0].id}`}>
                                     <h2 className="text-2xl font-bold text-white">
                                         {noticiasFiltradas[0].titulo}
@@ -103,9 +100,6 @@ export default function Noticias() {
                                 className="bg-white rounded-lg shadow-md overflow-hidden hover:shadow-lg transition duration-300"
                             >
                                 <div className="p-4">
-                                    <span className="text-sm text-gray-500 uppercase">
-                                        {noticia.categoria}
-                                    </span>
                                     <h3 className="text-lg font-semibold text-gray-800 mt-2">
                                         <Link href={`/noticias/${noticia.id}`}>
                                             {noticia.titulo}
