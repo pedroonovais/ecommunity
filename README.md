@@ -2,6 +2,9 @@
 -- 555276 - PEDRO HENRIQUE MENDONÇA DE NOVAIS - 1TDSPX
 -- 554826 - RODRIGO ALCIDES BOHAC RÍOS - 1TDSPX
 
+## Link vídeo apresentação:
+https://youtu.be/u99yv-5gpn4
+
 ## Link para acesso na vercel:
 https://ecommunity.vercel.app/
 
