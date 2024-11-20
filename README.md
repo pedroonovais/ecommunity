@@ -11,7 +11,7 @@ https://github.com/pedroonovais/ecommunity-api
 Professor, até o momento não consegui rodar a api do backend via HTTPS, espero que no momento que você estiver lendo isso já esteja ok, porém está dificil...
 
 
-Comandos para rodar o sistema:
+## Comandos para rodar o sistema front end:
 
 ```bash
 npm run dev
