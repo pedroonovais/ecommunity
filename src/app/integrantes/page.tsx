@@ -64,18 +64,18 @@ export default function Integrantes() {
 
                         {/* Div com ícones sociais */}
                         <div className="flex justify-center md:justify-start space-x-6 text-verdeFolha">
-                            <a
+                            <Link
                                 href="https://www.linkedin.com/in/pedroonovais/"
                                 target="_blank"
                             >
                                 <FaLinkedin className="w-8 h-8 hover:text-verdeClaro transition-colors duration-300" />
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="https://github.com/pedroonovais"
                                 target="_blank"
                             >
                                 <FaGithub className="w-8 h-8 hover:text-verdeClaro transition-colors duration-300" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
                 </div>
@@ -102,18 +102,18 @@ export default function Integrantes() {
 
                         {/* Div com ícones sociais */}
                         <div className="flex justify-center md:justify-end space-x-6 text-verdeFolha">
-                            <a
+                            <Link
                                 href="https://www.linkedin.com/in/rodrigo-alcides-bohac-r%C3%ADos-67173054/"
                                 target="_blank"
                             >
                                 <FaLinkedin className="w-8 h-8 hover:text-verdeClaro transition-colors duration-300" />
-                            </a>
-                            <a
+                            </Link>
+                            <Link
                                 href="https://github.com/bohac73"
                                 target="_blank"
                             >
                                 <FaGithub className="w-8 h-8 hover:text-verdeClaro transition-colors duration-300" />
-                            </a>
+                            </Link>
                         </div>
                     </div>
 
