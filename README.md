@@ -2,7 +2,10 @@
 -- 555276 - PEDRO HENRIQUE MENDONÇA DE NOVAIS - 1TDSPX
 -- 554826 - RODRIGO ALCIDES BOHAC RÍOS - 1TDSPX
 
-# Link projeto backend java:
+## Link para acesso na vercel:
+https://ecommunity.vercel.app/
+
+## Link projeto backend java:
 https://github.com/pedroonovais/ecommunity-api
 
 Professor, até o momento não consegui rodar a api do backend via HTTPS, espero que no momento que você estiver lendo isso já esteja ok, porém está dificil...
