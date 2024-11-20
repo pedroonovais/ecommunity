@@ -92,27 +92,24 @@ export default function Integrantes() {
                         data-aos="fade-up-right"
                     >
                         <h2 className="text-4xl font-bold text-verdeFolha mb-3">
-                            Pedro Novais - 1TDSPX
+                            Rodrigo Rios - RM 554826 - 1TDSPX
                         </h2>
                         <p className="text-cinzaPedregulho text-lg mb-8">
-                            Programador com 3 anos de experiência em tecnologias
-                            como PHP, JavaScript, React, Oracle e .NET.
-                            Atualmente cursando Análise e Desenvolvimento de
-                            Sistemas na FIAP, Pedro é co-criador do eCommunity,
-                            trazendo seu conhecimento em programação para dar
-                            vida ao projeto.
+                            Experiência na concepção e desenvolvimento de soluções
+                            e negócios, com vivência no lançamento de novos produtos 
+                            e serviços. 
                         </p>
 
                         {/* Div com ícones sociais */}
                         <div className="flex justify-center md:justify-end space-x-6 text-verdeFolha">
                             <a
-                                href="https://www.linkedin.com/in/pedroonovais/"
+                                href="https://www.linkedin.com/in/rodrigo-alcides-bohac-r%C3%ADos-67173054/"
                                 target="_blank"
                             >
                                 <FaLinkedin className="w-8 h-8 hover:text-verdeClaro transition-colors duration-300" />
                             </a>
                             <a
-                                href="https://github.com/pedroonovais"
+                                href="https://github.com/bohac73"
                                 target="_blank"
                             >
                                 <FaGithub className="w-8 h-8 hover:text-verdeClaro transition-colors duration-300" />
@@ -123,7 +120,7 @@ export default function Integrantes() {
                     {/* Seção de imagem */}
                     <div className="max-w-3xl md:ml-6" data-aos="fade-up-left">
                         <Image
-                            src="/pedroNovais.jpg"
+                            src="/rodrigoBohac.jpg"
                             alt="Descrição da imagem"
                             width={500}
                             height={300}
